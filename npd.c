@@ -6,13 +6,13 @@ struct Node {
   struct Node *next;
 };
 
-static struct Node* create(int value) {
+struct Node* create(int value) {
   struct Node *ret = (struct Node *)malloc(sizeof(struct Node));
   ret->x = value;
   return ret;
 }
 
-static void destroy(struct Node **ptr) {
+void destroy(struct Node **ptr) {
   free(*ptr);
   *ptr = NULL;
 }
