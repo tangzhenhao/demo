@@ -1,6 +1,6 @@
 all: app
 
-app: 1.o npd.o double_free.o div_by_zero.o main.o
+app: npd.o double_free.o div_by_zero.o main.o
 	$(CC) -o $@ $^
 
 clean: tsmart-clean
