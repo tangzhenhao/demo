@@ -16,3 +16,11 @@ void destroy(struct Node **ptr) {
 int maybe_zero(int i) {
   return i > 0 ? i : 0;
 }
+
+int f(int *p, int x) {
+  if (x > 0) {
+    return *p; 
+  } else {
+    return 0; 
+  }
+}
