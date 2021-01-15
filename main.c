@@ -36,7 +36,6 @@ int main(int argc, char **args) {
   i = 0;
   scanf("%d", &i);
   int b = 4 / maybe_zero(i);
-  return 0;
   
   // Case 5: the following code does not produce NPD
   int x;
