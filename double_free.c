@@ -12,7 +12,7 @@ static struct Node* create(int value) {
   return ret;
 }
 
-void free_wrapper(struct Node **ptr) {
+void free_later(struct Node **ptr) {
   free(*ptr);
 }
 
@@ -25,5 +25,5 @@ void double_free() {
     free(r);
   }
   // Double Free
-  free_wrapper(&r);
+  free_later(&r);
 }
