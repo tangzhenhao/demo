@@ -2,6 +2,7 @@
 #define __LIB_H__
 
 #include <stdlib.h>
+#include <stdio.h>
 
 struct Node {
   int x;
