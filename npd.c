@@ -96,7 +96,7 @@ void npd4() {
 void npd5() {
   int x, y;
   int size = x + y;
-  int *p = size ? malloc(...(x+y))(int *)malloc((size) * sizeof(int))  : NULL;
+  int *p = size ? (int *)malloc((size) * sizeof(int))  : NULL;
   if (x >= 0 && y >= 0) 
   {
     fill(p, size);
