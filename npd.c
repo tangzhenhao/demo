@@ -82,17 +82,15 @@ void npd4() {
   struct Node b;
   struct Node c;
   struct Node* p;
-  a.data = 1;
+  a.x = 1;
   a.next = &b;
-  b.data = 2;
+  b.x = 2;
   b.next = &c;
-  c.data = 3;
+  c.x = 3;
   c.next = NULL;
 
   for (p = &a; p != NULL; p = get_next(p)) {
-    // FP: NPD
-    // fixed
-    p->data = 888;
+    p->x = 888;
   }
 
 }
