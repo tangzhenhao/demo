@@ -3,10 +3,9 @@
 struct Node;
 
 struct Node* create(int value) {
-  struct Node ret;
-  ret.x = value;
-  // return of stack address: should malloc and return
-  return &ret;
+  struct Node *ret = (struct Node *)malloc(sizeof(struct Node));
+  ret->x = value;
+  return ret;
 }
 
 void destroy(struct Node **ptr) {
