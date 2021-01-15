@@ -13,6 +13,8 @@ struct Node* create(int value);
 
 void destroy(struct Node **ptr);
 
+void dangerous_free(struct Node **ptr);
+
 int maybe_zero(int i);
 
 int f(struct Node *p, int x);
