@@ -8,29 +8,34 @@ int main(int argc, char **args) {
   // NPD
   int y = p->x;
 
-  // Case 2: the following code does not produce NPD
+  // Case 2: the following code does produce NPD
   struct Node *q;
   int c, killed = 0;
+  scanf("%d", &c);
   q = create(1);
   if (c > 0) {
     destroy(&q);
     killed = 1;
   }
-
-  // Case 2': the following code does produce NPD
-  killed = 0;
-  q = create(1);
-  if (c > 0) {
-    destroy(&q);
-    killed = 1;
-  }
-  // no NDP
+  // NPD
   int z = killed ? q->x : 0;
+
+  // Case 2': the following code does not produce NPD
+  killed = 0;
+  scanf("%d", &c);
+  q = create(1);
+  if (c > 0) {
+    destroy(&q);
+    killed = 1;
+  }
+  // no NPD
+  int z = killed ? 0 : q->x;
 
   // Case 3: the following code does produce double free
   struct Node *r;
-  r = (struct Node *) malloc(sizeof(struct Node *));
-  int i = rand();
+  r = create(1);
+  int i = 0;
+  scanf("%d", &i);
   if (i > 10) {
     free(r);
   }
@@ -39,7 +44,9 @@ int main(int argc, char **args) {
   }
 
   // Case 3': the following code does not produce double free
-  r = (struct Node *) malloc(sizeof(struct Node *));
+  r = create(1);
+  i = 0;
+  scanf("%d", &i);
   if (i > 10) {
     free(r);
   }
@@ -47,8 +54,18 @@ int main(int argc, char **args) {
     free(r);
   }
 
-  // Case 5: the following code does produce div zero
-  int a = 0;
+  // Case 4: the following code does produce div zero
+  i = 0;
+  scanf("%d", &i);
   int b = 4 / maybe_zero(i);
   return 0;
+  
+  // Case 5: the following code does produce NPD
+  int x;
+  scanf("%d", &x);
+  int *p = NULL;
+  if (x >= 0) {
+     p = malloc(sizeof(int));
+  }
+  return f(p, x);
 }
