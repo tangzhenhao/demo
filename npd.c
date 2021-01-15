@@ -73,24 +73,21 @@ void npd3() {
   
 }
 
-struct Node* get_next(struct Node* node) {
-  return node->x % 2 == 0 ? node->next : NULL;
+void fill(int *p, int len)
+{
+  for (int i = 0; i < len; i++)
+  {
+    p[i] = i;
+  }
 }
 
 void npd4() {
-  struct Node a;
-  struct Node b;
-  struct Node c;
-  struct Node* p;
-  a.x = 1;
-  a.next = &b;
-  b.x = 2;
-  b.next = &c;
-  c.x = 3;
-  c.next = NULL;
-
-  for (p = &a; p != NULL; p = get_next(p)) {
-    p->x = 888;
+  int x, y;
+  int *p = x >= 0 && y >= 0 ? (int *)malloc((x+y) * sizeof(int)) : NULL;
+  int size = x + y;
+  if (size > 0) 
+  {
+    fill(p, size);
   }
 
 }
