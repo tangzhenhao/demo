@@ -19,15 +19,6 @@ int main(int argc, char **args) {
   }
   // NPD
   int z = killed ? q->x : 0;
-
-  // Case 2': the following code does not produce NPD
-  killed = 0;
-  scanf("%d", &c);
-  q = create(1);
-  if (c > 0) {
-    destroy(&q);
-    killed = 1;
-  }
   // no NPD
   z = killed ? 0 : q->x;
 
@@ -39,20 +30,7 @@ int main(int argc, char **args) {
   if (i > 10) {
     free(r);
   }
-  if (i <= 11) {
-    free(r);
-  }
-
-  // Case 3': the following code does not produce double free
-  r = create(1);
-  i = 0;
-  scanf("%d", &i);
-  if (i > 10) {
-    free(r);
-  }
-  if (i <= 10) {
-    free(r);
-  }
+  dangerous_free(&r);
 
   // Case 4: the following code does produce div zero
   i = 0;
