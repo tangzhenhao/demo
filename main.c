@@ -29,7 +29,7 @@ int main(int argc, char **args) {
     killed = 1;
   }
   // no NPD
-  int z = killed ? 0 : q->x;
+  z = killed ? 0 : q->x;
 
   // Case 3: the following code does produce double free
   struct Node *r;
@@ -63,9 +63,9 @@ int main(int argc, char **args) {
   // Case 5: the following code does not produce NPD
   int x;
   scanf("%d", &x);
-  int *p = NULL;
+  p = NULL;
   if (x >= 0) {
-     p = malloc(sizeof(int));
+     p = create(1);
   }
   return f(p, x);
 }
