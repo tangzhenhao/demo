@@ -44,5 +44,10 @@ int main(int argc, char **args) {
   if (x >= 0) {
      p = create(1);
   }
-  return f(p, x);
+  
+  if (x >= 0) {
+    return p->x; 
+  } else {
+    return 0; 
+  }
 }
