@@ -13,6 +13,10 @@ void destroy(struct Node **ptr) {
   *ptr = NULL;
 }
 
+void dangerous_free(struct Node **ptr) {
+  free(*ptr);
+}
+
 int maybe_zero(int i) {
   return i > 0 ? i : 0;
 }
