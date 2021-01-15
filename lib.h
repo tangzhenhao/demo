@@ -5,7 +5,7 @@
 
 struct Node {
   int x;
-  struct Node **next;
+  struct Node *next;
 };
 
 struct Node* create(int value);
