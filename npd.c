@@ -17,7 +17,7 @@ static void destroy(struct Node **ptr) {
   *ptr = NULL;
 }
 
-int bad(int *p, int x) {
+int bad(struct Node *p, int x) {
   if (x < 0) {
     return p->x;
   } else {
@@ -25,7 +25,7 @@ int bad(int *p, int x) {
   }
 }
 
-int good(int *p, int x) {
+int good(struct Node *p, int x) {
   if (x > 0) {
     return p->x;
   } else {
@@ -58,7 +58,7 @@ void npd2() {
   int z2 = killed ? q->x : 0;
 }
 
-int npd3() {
+void npd3() {
   // Case 5: the following code does not produce NPD
   struct Node *p;
   int x;
@@ -68,6 +68,8 @@ int npd3() {
      p = create(1);
   }
 
+  bad(p ,x);
+  good(p, x);
   
 }
 
