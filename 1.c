@@ -12,7 +12,7 @@ struct Node* get_next(struct Node* node) {
   return rand_num % 2 == 0 ? node->next : NULL;
 }
 
-void good() {
+void npd4() {
   struct Node a;
   struct Node b;
   struct Node c;
@@ -30,9 +30,4 @@ void good() {
     p->data = 888;
   }
 
-}
-
-int main() {
-  good();
-  return 0;
 }
