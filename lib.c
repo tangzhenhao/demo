@@ -17,9 +17,9 @@ int maybe_zero(int i) {
   return i > 0 ? i : 0;
 }
 
-int f(int *p, int x) {
+int f(struct Node *p, int x) {
   if (x > 0) {
-    return *p; 
+    return p->x; 
   } else {
     return 0; 
   }
