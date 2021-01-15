@@ -60,7 +60,7 @@ int main(int argc, char **args) {
   int b = 4 / maybe_zero(i);
   return 0;
   
-  // Case 5: the following code does produce NPD
+  // Case 5: the following code does not produce NPD
   int x;
   scanf("%d", &x);
   int *p = NULL;
