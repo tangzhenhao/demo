@@ -41,3 +41,21 @@ void npd2() {
   // NPD
   int z2 = killed ? q->x : 0;
 }
+
+int npd3() {
+  // Case 5: the following code does not produce NPD
+  struct Node *p;
+  int x;
+  scanf("%d", &x);
+  p = NULL;
+  if (x >= 0) {
+     p = create(1);
+  }
+
+  if (x >= 0) {
+    return p->x;
+  } else {
+    return 0;
+  }
+}
+
