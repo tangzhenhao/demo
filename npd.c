@@ -17,6 +17,22 @@ static void destroy(struct Node **ptr) {
   *ptr = NULL;
 }
 
+int bad(int *p, int x) {
+  if (x < 0) {
+    return p->x;
+  } else {
+    return 0;
+  }
+}
+
+int good(int *p, int x) {
+  if (x > 0) {
+    return p->x;
+  } else {
+    return 0;
+  }
+}
+
 void npd1() {
   // Case 1: here is a simple case of NPD
   struct Node *p;
@@ -52,10 +68,6 @@ int npd3() {
      p = create(1);
   }
 
-  if (x >= 0) {
-    return p->x;
-  } else {
-    return 0;
-  }
+  
 }
 
