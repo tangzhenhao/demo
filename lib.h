@@ -15,6 +15,6 @@ void destroy(struct Node **ptr);
 
 int maybe_zero(int i);
 
-int f(int *p, int x);
+int f(struct Node *p, int x);
 
 #endif
