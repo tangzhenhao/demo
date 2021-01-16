@@ -6,7 +6,9 @@ int maybe_zero(int i) {
 
 void div_by_zero() {
   int i = 0;
-  scanf("%d", &i);
+  if (scanf("%d", &i) == EOF) {
+    return; 
+  }
   // Divide By Zero
   int b = 4 / maybe_zero(i);
 }
