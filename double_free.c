@@ -20,7 +20,9 @@ void double_free() {
   struct Node *r;
   r = create(1);
   int i = 0;
-  scanf("%d", &i);
+  if (scanf("%d", &i) == EOF) {
+    return; 
+  }
   if (i > 10) {
     free(r);
   }
